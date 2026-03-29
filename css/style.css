@@ -4,7 +4,8 @@
     --text: #111827;
     --nav-bg: #f3f4f6;
     --nav-text: #111827;
-    --accent: #7C3AED; /* purple accent */
+    --accent: #7C3AED; /* primary purple accent */
+    --accent-2: #C084FC; /* softer lavender */
     --card-bg: #ffffff;
     --muted: #6b7280;
     --silver: #c0c0c0;
@@ -17,6 +18,7 @@
     --nav-bg: #0f1724;
     --nav-text: #e6e7ea;
     --accent: #9b59b6; /* softer purple */
+    --accent-2: #B794F4;
     --card-bg: #0f1114;
     --muted: #bfc0c5;
     --silver: #a8a8b0;
@@ -25,7 +27,7 @@
 /* Global */
 * { box-sizing: border-box; }
 body {
-    font-family: Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     margin: 0;
     background: var(--bg);
     color: var(--text);
@@ -61,7 +63,19 @@ nav a {
     border-radius: 6px;
 }
 
-nav a:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+nav a:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); color: white; }
+
+/* decorative accent under the nav */
+nav { border-bottom: 4px solid transparent; }
+nav::after {
+    content: '';
+    height: 4px;
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    margin-top: 8px;
+    border-radius: 4px;
+}
 
 /* Theme toggle button */
 .theme-toggle {
@@ -80,7 +94,7 @@ nav a:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
 .hero img { width: 150px; border-radius: 50%; }
 
 .btn {
-    background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #ffffff 30%));
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
     color: white;
     padding: 10px 14px;
     text-decoration: none;
@@ -108,6 +122,29 @@ nav a:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
 
 /* utility */
 .muted { color: var(--muted); }
+
+/* headings and accents */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent);
+    margin-top: 0.25rem;
+}
+
+a { color: var(--accent); }
+
+/* subtle page background using purple whisper */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, color-mix(in srgb, var(--accent-2) 6%, transparent), transparent 20%), radial-gradient(ellipse at bottom left, color-mix(in srgb, var(--accent) 4%, transparent), transparent 18%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+}
+
+/* ensure content sits above decorative layer */
+header, section, .grid, .card { position: relative; z-index: 1; }
 
 /* small screens */
 @media (max-width: 600px) {
