@@ -1,7 +1,8 @@
 :root {
     /* Light theme (defaults) */
     /* soft pastel purple background for a girly/light appearance */
-    --bg: #FBF5FF;
+    --bg: #F7EEFF; /* base pastel purple */
+    --bg-accent: #F1E6FF; /* subtle gradient stop */
     --text: #111827;
     --nav-bg: #f3f4f6;
     --nav-text: #111827;
@@ -30,7 +31,8 @@
 body {
     font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     margin: 0;
-    background: var(--bg);
+    /* gentle vertical gradient using the purple variables */
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%);
     color: var(--text);
     transition: background-color 200ms ease, color 200ms ease;
 }
@@ -111,11 +113,12 @@ nav::after {
 }
 
 .card {
-    background: var(--card-bg);
-    border: 1px solid color-mix(in srgb, var(--silver) 20%, transparent);
+    /* slight purple tint to cards so they feel part of the theme */
+    background: color-mix(in srgb, var(--accent-2) 6%, var(--card-bg));
+    border: 1px solid color-mix(in srgb, var(--silver) 18%, transparent);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(124,58,237,0.06);
     transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -134,14 +137,18 @@ h1, h2, h3 {
 a { color: var(--accent); }
 
 /* subtle page background using purple whisper */
+
 body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at top right, color-mix(in srgb, var(--accent-2) 6%, transparent), transparent 20%), radial-gradient(ellipse at bottom left, color-mix(in srgb, var(--accent) 4%, transparent), transparent 18%);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.35;
+        content: '';
+        position: fixed;
+        inset: 0;
+        /* larger, softer purple decorative shapes for a more obvious purple background */
+        background:
+            radial-gradient(600px 400px at 85% 10%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 35%),
+            radial-gradient(500px 360px at 10% 90%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 40%);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.45;
 }
 
 /* ensure content sits above decorative layer */
