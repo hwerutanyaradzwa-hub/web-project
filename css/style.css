@@ -1,6 +1,7 @@
 :root {
     /* Light theme (defaults) */
-    --bg: #ffffff;
+    /* soft pastel purple background for a girly/light appearance */
+    --bg: #FBF5FF;
     --text: #111827;
     --nav-bg: #f3f4f6;
     --nav-text: #111827;
