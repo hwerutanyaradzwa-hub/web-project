@@ -1,8 +1,8 @@
 :root {
     /* Light theme (defaults) */
-    /* soft pastel purple background for a girly/light appearance */
-    --bg: #F7EEFF; /* base pastel purple */
-    --bg-accent: #F1E6FF; /* subtle gradient stop */
+    /* warmer girly pastel that blends nicely with purple (soft blush-lavender) */
+    --bg: #FFF0FB; /* soft blush */
+    --bg-accent: #F6E8FF; /* lavender blend */
     --text: #111827;
     --nav-bg: #f3f4f6;
     --nav-text: #111827;
