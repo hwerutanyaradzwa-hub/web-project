@@ -188,6 +188,15 @@ header, section, .grid, .card { position: relative; z-index: 1; }
 .about-section { padding: 28px 20px 60px 20px; max-width: 900px; margin: 0 auto; }
 .about-bio p { margin: 0 0 12px 0; color: var(--muted); }
 
+/* Contact form styles */
+.contact-links, .social-links { margin: 12px 0; }
+form#contact-form { display: grid; gap: 10px; max-width: 640px; }
+form#contact-form label { font-weight: 600; color: var(--text); }
+form#contact-form input[type="text"], form#contact-form input[type="email"], form#contact-form textarea { padding: 10px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--silver) 40%, transparent); background: color-mix(in srgb, var(--card-bg) 98%, transparent); color: var(--text); }
+form#contact-form input:focus, form#contact-form textarea:focus { outline: none; box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 12%, transparent); border-color: var(--accent); }
+.social-links a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.social-links a:hover { text-decoration: underline; }
+
 .skills { display: grid; gap: 12px; margin: 12px 0 22px 0; }
 .skill { display: grid; gap: 6px; }
 .skill-name { font-weight: 600; color: var(--text); font-size: 0.95rem; }
