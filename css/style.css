@@ -95,7 +95,18 @@ nav::after {
 .theme-toggle:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
 
 .hero { text-align: center; padding: 50px; }
-.hero img { width: 150px; border-radius: 50%; }
+.hero { display: flex; align-items: center; gap: 28px; padding: 50px; justify-content: center; }
+.hero img, .profile-photo { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; }
+.profile-photo { border: 6px solid rgba(124,58,237,0.12); box-shadow: 0 12px 30px rgba(124,58,237,0.10); }
+
+.hero-content { max-width: 720px; text-align: left; }
+.hero-content h2 { margin: 0 0 6px 0; font-size: 2rem; }
+.tagline { margin: 0 0 12px 0; color: color-mix(in srgb, var(--accent) 40%, var(--text)); font-weight: 600; }
+.intro { margin: 0 0 18px 0; color: var(--muted); }
+.hero-ctas { display: flex; gap: 12px; align-items: center; }
+
+.btn.secondary { background: transparent; color: var(--accent); border: 2px solid color-mix(in srgb, var(--accent) 20%, var(--silver)); padding: 8px 12px; }
+.btn.secondary:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); color: white; }
 
 .btn {
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
@@ -177,4 +188,7 @@ header, section, .grid, .card { position: relative; z-index: 1; }
 @media (max-width: 600px) {
     nav { flex-wrap: wrap; gap: 8px; }
     .grid { padding: 12px; }
+    .hero { flex-direction: column; padding: 28px; }
+    .hero-content { text-align: center; }
+    .hero-ctas { justify-content: center; }
 }
