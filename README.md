@@ -64,11 +64,4 @@ Contact / Support
 - Email: hwerutanyaradzwa@gmail.com
 - GitHub: https://github.com/hwerutanyaradzwa
 
----
 
-If you'd like, I can also:
-- Add a live-demo build step (CI) or a GitHub Actions workflow for preview builds.
-- Hook the contact form to Formspree or a Netlify form for serverless form handling.
-- Add social icons, favicon, or open-graph meta tags for sharing.
-
-Tell me what you'd like next and I’ll implement it.
